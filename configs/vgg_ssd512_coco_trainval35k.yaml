@@ -18,7 +18,7 @@ SOLVER:
   MAX_ITER: 520000
   LR_STEPS: [360000, 480000]
   GAMMA: 0.1
-  BATCH_SIZE: 24
+  BATCH_SIZE: 16
   LR: 1e-3
 
 OUTPUT_DIR: 'outputs/vgg_ssd512_coco_trainval35k'

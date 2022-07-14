@@ -9,6 +9,20 @@ _DATASETS = {
     'COCODataset': COCODataset,
 }
 
+import torch
+import numpy as np
+import random
+
+######### Set Seeds ###########
+random_seed = 8138
+torch.manual_seed(random_seed)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+np.random.seed(random_seed)
+random.seed(random_seed)
+torch.cuda.manual_seed(random_seed)
+torch.cuda.manual_seed_all(random_seed) # if use multi-GPU
+
 
 def build_dataset(dataset_list, transform=None, target_transform=None, is_train=True):
     assert len(dataset_list) > 0

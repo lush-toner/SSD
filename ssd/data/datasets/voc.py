@@ -6,6 +6,16 @@ from PIL import Image
 
 from ssd.structures.container import Container
 
+import random
+######### Set Seeds ###########
+random_seed = 8138
+torch.manual_seed(random_seed)
+torch.backends.cudnn.deterministic = True
+torch.backends.cudnn.benchmark = False
+np.random.seed(random_seed)
+random.seed(random_seed)
+torch.cuda.manual_seed(random_seed)
+torch.cuda.manual_seed_all(random_seed) # if use multi-GPU
 
 class VOCDataset(torch.utils.data.Dataset):
     class_names = ('__background__',
@@ -26,6 +36,7 @@ class VOCDataset(torch.utils.data.Dataset):
         self.transform = transform
         self.target_transform = target_transform
         image_ids = os.path.join(self.data_dir, "ImageSets", "Main", "%s.txt" % self.split)
+        print(self.split)
         self.ids = VOCDataset._read_image_ids(image_ids) # read txt and get list
         self.keep_difficult = keep_difficult
 
@@ -108,6 +119,8 @@ class VOCDataset(torch.utils.data.Dataset):
 
     def _read_image(self, image_id):
         image_file = os.path.join(self.data_dir, "JPEGImages", "%s.jpg" % image_id)
+        if image_id == "2008_001007":
+            print(image_file)
         image = Image.open(image_file).convert("RGB")
         image = np.array(image)
         return image

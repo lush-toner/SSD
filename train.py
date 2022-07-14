@@ -68,7 +68,7 @@ def train(cfg, args):
 
 def main():
     parser = argparse.ArgumentParser(description='Single Shot MultiBox Detector Training With PyTorch')
-    parser.add_argument("--config-file", default="./configs/vgg_ssd300_voc0712.yaml", metavar="FILE", help="path to config file",type=str)
+    parser.add_argument("--config-file", default="./configs/vgg_ssd512_voc0712.yaml", metavar="FILE", help="path to config file",type=str)
     parser.add_argument("--local_rank", type=int, default=0)
     parser.add_argument('--log_step', default=10, type=int, help='Print logs every log_step')
     parser.add_argument('--save_step', default=2500, type=int, help='Save checkpoint every save_step')

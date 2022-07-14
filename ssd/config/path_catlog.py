@@ -37,20 +37,20 @@ class DatasetCatalog:
             "split": "test"
         },
         'coco_2014_valminusminival': {
-            "data_dir": "val2014",
-            "ann_file": "annotations/instances_valminusminival2014.json"
+            "data_dir": "coco/val2014",
+            "ann_file": "coco/annotations/instances_valminusminival2014.json"
         },
         'coco_2014_minival': {
-            "data_dir": "val2014",
-            "ann_file": "annotations/instances_minival2014.json"
+            "data_dir": "coco/val2014",
+            "ann_file": "coco/annotations/instances_minival2014.json"
         },
         'coco_2014_train': {
-            "data_dir": "train2014",
-            "ann_file": "annotations/instances_train2014.json"
+            "data_dir": "coco/train2014",
+            "ann_file": "coco/annotations/instances_train2014.json"
         },
         'coco_2014_val': {
-            "data_dir": "val2014",
-            "ann_file": "annotations/instances_val2014.json"
+            "data_dir": "coco/val2014",
+            "ann_file": "coco/annotations/instances_val2014.json"
         },
     }
 
